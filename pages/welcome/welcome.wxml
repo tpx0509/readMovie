@@ -1,0 +1,9 @@
+<view class="container">
+    
+    <image class="avatar" src="{{ userInfo.avatarUrl }}"></image>
+    <text wx:if="{{ hasGetUserInfo }}" class="motto">Hello, {{ userInfo.nickName }}</text>
+    <button wx:if="{{ !hasGetUserInfo }}" class="authorize" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">Click here</button>
+    <view wx:else class="journey-container" bindtap="onTap">
+        <text class="journey">开启小程序之旅</text>
+    </view>
+</view>
